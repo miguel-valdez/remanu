@@ -1,6 +1,7 @@
 import numpy as np
 from tqdm import tqdm
 import dolfin as fem
+import sys
 
 class fid:
     def __init__(self, model,
