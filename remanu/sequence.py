@@ -1,3 +1,7 @@
+import numpy as np
+from tqdm import tqdm
+import dolfin as fem
+
 class fid:
     def __init__(self, model,
             dt= 1.e-3,
