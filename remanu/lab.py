@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import dolfin as fem
 import matplotlib as mpl
+import sys
 
 class lab:
     def __init__(self, mesh, cellfn= None, boundfn= None, periodic= None, show= False, init_const= False, **kwargs):
