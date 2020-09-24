@@ -4,7 +4,7 @@ with open('README.md', 'r') as f:
     long_description = f.read()
 
 setuptools.setup(
-    name='remanu-miguelvg87',
+    name='remanu',
     version='0.1',
     author='Miguel A. Valdez G.',
     author_email='mavaldez@imp.mx',
