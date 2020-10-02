@@ -7,7 +7,7 @@ setuptools.setup(
     name='remanu',
     version='0.1',
     author='Miguel A. Valdez G.',
-    author_email='mavaldez@imp.mx',
+    author_email='miguel.valdesg@gmail.com',
     description='fenics-based fem solver for nuclear magnetic resonance PDEs',
     long_description=long_description,
     long_description_content_type='text',
