@@ -22,4 +22,4 @@ def test_square():
     # Get curve fit
     T2 = fit(mt, seq.t_arr)
 
-    assert abs(T2 - e1./((1./model.T2) + 4.*rho/L)) < 1.e-6
+    assert abs(T2 - 1./((1./model.T2) + 4.*rho/L)) < 1.e-6
