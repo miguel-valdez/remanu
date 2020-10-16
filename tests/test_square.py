@@ -1,6 +1,11 @@
-from scipy.optimize import curve_fit
-from remanu import lab, fid
 import dolfin as fem
+import numpy as np
+from remanu import lab, fid
+from scipy.optimize import curve_fit
+
+import logging
+logging.getLogger('FFC').setLevel(logging.WARNING)
+logging.getLogger('UFL').setLevel(logging.WARNING)
 
 def fit(mt, t):
     popt, _ = curve_fit(lambda t, T: np.exp(-t/T), t, mt)
