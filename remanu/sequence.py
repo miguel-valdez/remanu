@@ -268,3 +268,4 @@ class cpmg:
                     l += 1
 
         return self.model.mt/self.model.eq_integral
+

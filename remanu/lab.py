@@ -294,3 +294,4 @@ class lab:
             values[0] = 1. if self.cellfn[cell.index] == self.i else 0.
         def value_shape(self):
             return ()
+
