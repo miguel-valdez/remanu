@@ -8,7 +8,7 @@ class mesh:
 
 
     @staticmethod
-    def disk(x, y= 1., l= 0.1):
+    def disk(self, x, y= 1., l= 0.1):
         geom = pg.opencascade.Geometry(
         )
 
