@@ -2,29 +2,35 @@ import dolfin as fem
 import pygmsh as pg
 import meshio
 
-def disk(x, y= 1., l= 0.1):
-    geom = pg.opencascade.Geometry(
-    )
+class mesh:
+    def __init__(self):
+        pass
 
-    geom.add_disk((0., 0., 0.), 1., radius1= y, char_length= l)
 
-    mesh = pg.generate_mesh(geom,
-        prune_z_0= True, verbose= 0, remove_lower_dim_cells= True,
-    )
+    @staticmethod
+    def disk(x, y= 1., l= 0.1):
+        geom = pg.opencascade.Geometry(
+        )
 
-    # Export to dolfin .xml
-    meshio.write("/tmp/mesh.xdmf",
-        meshio.Mesh(points= mesh.points,
-                    cells = dict(triangle= mesh.cells[0].data),
-                    ),
-    )
+        geom.add_disk((0., 0., 0.), 1., radius1= y, char_length= l)
 
-    # Load from dolfin .xml file
-    mesh = fem.Mesh()
-    with fem.XDMFFile('/tmp/mesh.xdmf') as infile:
-        infile.read(mesh)
+        mesh = pg.generate_mesh(geom,
+            prune_z_0= True, verbose= 0, remove_lower_dim_cells= True,
+        )
 
-    mesh.scale(x)
+        # Export to dolfin .xml
+        meshio.write("/tmp/mesh.xdmf",
+            meshio.Mesh(points= mesh.points,
+                        cells = dict(triangle= mesh.cells[0].data),
+                        ),
+        )
 
-    return mesh
+        # Load from dolfin .xml file
+        mesh = fem.Mesh()
+        with fem.XDMFFile('/tmp/mesh.xdmf') as infile:
+            infile.read(mesh)
+
+        mesh.scale(x)
+
+        return mesh
 
