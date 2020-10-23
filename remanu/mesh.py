@@ -1,8 +1,8 @@
-#import dolfin as fem
-#import pygmsh as pg
-#import meshio
+import dolfin as fem
+import pygmsh as pg
+import meshio
 
-def disk(self, x, y= 1., l= 0.1):
+def disk_mesh(x, y= 1., l= 0.1):
     geom = pg.opencascade.Geometry(
     )
 
@@ -27,4 +27,3 @@ def disk(self, x, y= 1., l= 0.1):
     mesh.scale(x)
 
     return mesh
-
