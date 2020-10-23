@@ -1,4 +1,4 @@
 from .lab import lab
 from .sequence import fid, cpmg
-from .mesh import mesh
+from .mesh import disk
 
